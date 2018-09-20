@@ -1,7 +1,7 @@
 {
-  "app.js": "/static/js/app.262e19ef.js",
-  "docs-index.js": "/static/js/docs-index.4e21957a.js",
-  "vendors.js": "/static/js/vendors.33c93082.js",
-  "runtime~app.js": "/static/js/runtime~app.7221e29ca057eac22054.js",
-  "index.html": "/index.html"
+  "app.js": "/text2vdom/static/js/app.5de2b8a6.js",
+  "docs-index.js": "/text2vdom/static/js/docs-index.4e21957a.js",
+  "vendors.js": "/text2vdom/static/js/vendors.0984516e.js",
+  "runtime~app.js": "/text2vdom/static/js/runtime~app.1b260655de369fbc974a.js",
+  "index.html": "/text2vdom/index.html"
 }
