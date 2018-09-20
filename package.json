@@ -1,11 +1,14 @@
 {
   "name": "text2vdom",
   "version": "0.0.0",
-  "description": "connect react context",
+  "description": "text to vdom",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf ./dist && tsc",
+    "build": "rimraf ./dist && tsc && npm run build:parser",
+    "build:parser": "pegjs -o ./dist/parser.js ./src/parser.pegjs",
+    "build:docz": "docz build",
+    "dev:docz": "docz dev",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -27,11 +30,12 @@
   "peerDependencies": {
     "react": "^16.3.0"
   },
-  "dependencies": {
-    "@masala/parser": "^0.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@types/node": "^10.10.1",
     "@types/react": "^16.4.6",
+    "docz": "^0.11.2",
+    "pegjs": "^0.10.0",
     "rimraf": "^2.6.2",
     "typescript": "^3.0.3"
   }

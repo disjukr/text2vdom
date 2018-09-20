@@ -9,8 +9,12 @@ export interface CustomComponents {
 
 export default function text2vdom(
     text: string,
-    customComponents: CustomComponents,
+    customComponents: CustomComponents = {},
 ): React.ReactNode {
-    // TODO
-    return <></>;
+    const { parse } = require('./parser');
+    return React.createElement(
+        React.Fragment,
+        null,
+        ...parse(text, { customComponents }),
+    );
 }
