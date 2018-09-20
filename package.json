@@ -9,6 +9,7 @@
     "build:parser": "pegjs -o ./dist/parser.js ./src/parser.pegjs",
     "build:docz": "docz build",
     "dev:docz": "docz dev",
+    "deploy:docz": "npm run build:docz && gh-pages -d .docz/dist",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -35,6 +36,7 @@
     "@types/node": "^10.10.1",
     "@types/react": "^16.4.6",
     "docz": "^0.11.2",
+    "gh-pages": "^2.0.0",
     "pegjs": "^0.10.0",
     "rimraf": "^2.6.2",
     "typescript": "^3.0.3"

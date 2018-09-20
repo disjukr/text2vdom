@@ -3,7 +3,14 @@ jsx스럽게 생긴 문자열을 파싱하여 React 노드로 변환해줍니다
 
 번역텍스트 사이에 리액트 컴포넌트를 끼워넣고 싶은 경우에 사용하기 위해 만들었습니다.
 
+## 설치하기
+```sh
+npm install text2vdom
+```
+
 ## 사용법
+DEMO: <https://disjukr.github.io/text2vdom>
+
 ```tsx
 import $ from 'text2vdom';
 
