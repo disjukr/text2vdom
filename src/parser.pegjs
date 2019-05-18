@@ -40,4 +40,4 @@ tagStart = '<' x:tagName '>' { return x; }
 tagEnd = '</' x:tagName '>' { return x; }
 selfClosingTag = '<' x:tagName '/>' { return x; }
 
-tagName = x:([^/>] *) { return x.join(''); }
+tagName = x:([^/>]*) { return x.join('').trim(); }
