@@ -10,7 +10,7 @@
         if (!children || !children.length) React.createElement(component);
         return React.createElement.apply(
             React,
-            [component, null].concat(children),
+            [component, null].concat(children)
         );
     }
 }
