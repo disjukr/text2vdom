@@ -1,5 +1,7 @@
+{{
+    import React from 'react';
+}}
 {
-    var React = require('react');
     function Component(name) {
         var customComponent = options.customComponents[name];
         if (customComponent) return customComponent;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { parse } from './parser.mjs';
 
 export interface CustomComponentProps {
     children: React.ReactNode;
@@ -11,7 +12,6 @@ export default function text2vdom(
     text: string,
     customComponents: CustomComponents = {},
 ): React.ReactNode {
-    const { parse } = require('./parser');
     return React.createElement(
         React.Fragment,
         null,

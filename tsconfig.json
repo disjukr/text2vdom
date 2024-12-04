@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "target": "ES2015",
         "outDir": "dist",
         "declaration": true,
         "lib": [
@@ -13,7 +14,7 @@
         "strict": true,
         "noUnusedLocals": true
     },
-    "exclude": [
-        "node_modules"
+    "include": [
+        "src"
     ]
 }
