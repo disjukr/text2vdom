@@ -42,7 +42,7 @@ tagStart = '<' _ x:tagName _ ys:attrs? _ '>' { return { name: x, attrs: ys || []
 tagEnd = '</' _ x:tagName _ '>' { return x; }
 selfClosingTag = '<' _ x:tagName _ ys:attrs? _ '/>' { return { name: x, attrs: ys || [] }; }
 
-tagName = x:([a-zA-Z_:][a-zA-Z0-9_:.-]*) { return x.join('').trim(); }
+tagName = [a-zA-Z_:][a-zA-Z0-9_:.-]* { return text(); }
 
 attrs = x:attr+ { return x; }
 attr = _ key:attrName _ '=' _ value:attrValue _ { return { key, value }; }
