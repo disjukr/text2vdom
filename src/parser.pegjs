@@ -5,7 +5,7 @@
         if (customComponent) return customComponent;
         return name;
     }
-    function el({name, attrs}, children) {
+    function el({ name, attrs }, children) {
         var component = Component(name);
         var props = {};
         attrs.forEach(({key, value}) => props[key] = value);
@@ -29,10 +29,11 @@ children = (head:child tail:children {
 
 child
     = tag
-    / '&lt;' { return '<'; }
+    / '&amp;' { return '&'; }
     / '&gt;' { return '>'; }
-    / '&'
-    / [^&<]
+    / '&lt;' { return '<'; }
+    / '&quot;' { return '"'; }
+    / [^<]
 
 tag
     = x:selfClosingTag { return el(x); }
@@ -47,8 +48,6 @@ tagName = [a-zA-Z_:][a-zA-Z0-9_:.-]* { return text(); }
 attrs = x:attr+ { return x; }
 attr = _ key:attrName _ '=' _ value:attrValue _ { return { key, value }; }
 attrName = [a-zA-Z_:][a-zA-Z0-9_:.-]* { return text(); }
-attrValue
-    = '"' value:([^"]*) '"' { return value.join('').trim(); }
-    / "'" value:([^']*) "'" { return value.join('').trim(); }
+attrValue = '"' value:([^"]*) '"' { return value.join('').trim().replaceAll('&amp;', '&').replaceAll('&quot;', '"'); }
 
 _ = (' '*)
